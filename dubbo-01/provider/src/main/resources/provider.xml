@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!--指定服务器名称-->
+
+    <dubbo:application name="provider"/>
+
+    <!--dubbo协议和端口号-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+    <!--
+        暴露接口和服务
+        interface:暴露的接口的类路径
+        ref:暴露接口具体的实现类
+        registry:N/A不使用注册中心
+    -->
+    <dubbo:service interface="com.bjpowernode.service.OrderService"
+                   ref="orderServiceBean"
+                   registry="N/A"
+
+    />
+    <!--接口实现类-->
+
+    <bean id="orderServiceBean" class="com.bjpowernode.service.impl.OrderServiceImpl"/>
+
+</beans>

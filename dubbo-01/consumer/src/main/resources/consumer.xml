@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--指定消费方名称-->
+    <dubbo:application name="consumer"/>
+
+    <!--
+        调用Proivider中的公开方法
+        interface:提供者公开的接口
+        url:访问提供者开发的端口号调用服务
+        registry:不使用注册中心
+    -->
+    <dubbo:reference id="remoteService"
+                     interface="com.bjpowernode.service.OrderService"
+                     url="dubbo://localhost:20880"
+                     registry="N/A"/>
+
+    <bean id="goodService" class="com.bjpowernode.service.impl.GoodServiceImpl">
+        <!--类似setter注入-->
+        <property name="orderService" ref="remoteService"/>
+    </bean>
+</beans>
