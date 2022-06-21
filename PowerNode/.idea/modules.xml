@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PowerNode.iml" filepath="$PROJECT_DIR$/PowerNode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part01/part01.iml" filepath="$PROJECT_DIR$/part01/part01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part02/part02.iml" filepath="$PROJECT_DIR$/part02/part02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testweb01/testweb01.iml" filepath="$PROJECT_DIR$/testweb01/testweb01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testweb02/testweb02.iml" filepath="$PROJECT_DIR$/testweb02/testweb02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testweb03/testweb03.iml" filepath="$PROJECT_DIR$/testweb03/testweb03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testweb04/testweb04.iml" filepath="$PROJECT_DIR$/testweb04/testweb04.iml" />
+    </modules>
+  </component>
+</project>

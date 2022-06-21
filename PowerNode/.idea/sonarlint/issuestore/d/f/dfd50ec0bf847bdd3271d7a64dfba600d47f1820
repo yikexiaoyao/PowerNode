@@ -1,0 +1,14 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¬ßüã
+b
+java:S1989+"LHandle the following exception that could be thrown by "write": IOException.(¹ß¦«
+l
+java:S1989+"VHandle the following exception that could be thrown by "getOutputStream": IOException.(¹ß¦«
+v
+java:S1989+"`Handle the following exception that could be thrown by "getBytes": UnsupportedEncodingException.(¹ß¦«
+O
+java:S4719+"9Replace charset name argument with StandardCharsets.UTF_8(¹ß¦«
+g
+java:S1989,"LHandle the following exception that could be thrown by "close": IOException.(Ï €£ùÿÿÿÿ
+q
+java:S1989,"VHandle the following exception that could be thrown by "getOutputStream": IOException.(Ï €£ùÿÿÿÿ

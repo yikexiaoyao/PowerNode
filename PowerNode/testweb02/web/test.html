@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+        #main {
+            width: 980px;
+            margin: 0 auto;
+        }
+
+        #form_box {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #cdcdcd;
+        }
+
+        #message {
+            width: 100%;
+        }
+
+        #message_box {
+            display: none;
+            padding: 20px;
+            border: 1px solid #cdcdcd;
+        }
+
+        #send, .delete {
+            float: right;
+        }
+
+        #message_box p {
+            border: 1px solid #cdcdcd;
+            padding: 10px;
+            height: 28px;
+        }
+        #message_box p span {
+            float: left;
+        }
+
+        #message_box p a {
+            float: right;
+        }
+	</style>
+</head>
+<body>
+	<!-- <p><span>输入的内容</span><a href="javascript:">删除</a></p> -->
+	<div id="main">
+		<form id="form_box">
+			<h2>有什么新鲜事想告诉大家？</h2>
+			<textarea id="message" cols="30" rows="10"></textarea>
+			<p>还可以输入<span id="count">340</span>个字<input type="button" id="send" value="发布"></p>
+		</form>
+		<div id="message_box">
+
+		</div>
+	</div>
+	<script>
+		// 将多从实用的页面元素先定义
+		var e_message = document.getElementById("message")
+		var e_count = document.getElementById("count")
+		var e_send = document.getElementById("send")
+		var e_message_box = document.getElementById("message_box")
+		// 给多行文本域添加监控事件
+		e_message.oninput = function () {
+			if (this.value.length <= 340) {
+                e_count.innerHTML = 340 - this.value.length
+			} else {
+                this.value = this.value.substring(0, 340)
+			}
+        }
+        // 给发送按钮添加点击事件
+		e_send.onclick = function () {
+			// 创建三个标签
+            var e_span = document.createElement("span")
+			e_span.innerText = e_message.value
+
+			var e_a = document.createElement("a")
+			e_a.innerText = "删除"
+			e_a.setAttribute("href", "javascript:")
+
+			var e_p = document.createElement("p")
+			e_p.appendChild(e_span)
+			e_p.appendChild(e_a)
+
+			// 给发送节点添加点击事件
+			e_a.onclick = function () {
+				e_message_box.removeChild(e_p)
+				// 删除p元素
+				if (e_message_box.children.length == 0) {
+                    // 如果删除完成后，div中没有元素子节点，需要隐藏
+					e_message_box.style.display = "none"
+				}
+            }
+			// 将p标签添加到div中
+			var e_first = e_message_box.firstElementChild
+			e_message_box.insertBefore(e_p, e_first)
+
+			// 如果添加后的div中只有一个元素，需要将div从隐藏状态转换为显示状态
+			if (e_message_box.children.length == 1) {
+                e_message_box.style.display = "block"
+			}
+
+            // 清楚输入框内容
+            e_message.value = ""
+
+			// 重置可输入的字符值
+			e_count.innerHTML = "340"
+        }
+	</script>
+</body>
+</html>
