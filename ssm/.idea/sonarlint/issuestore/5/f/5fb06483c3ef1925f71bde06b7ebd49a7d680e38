@@ -1,0 +1,23 @@
+
+—
+java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹ä§Æ
+0
+java:S3751"Make this method "public".(Ë§ë»
+0
+java:S3751 "Make this method "public".(¹ä§Æ
+5
+java:S3751%"Make this method "public".(‹î‡øÿÿÿÿ
+/
+java:S3751+"Make this method "public".(ìë j
+0
+java:S37511"Make this method "public".(ã˜¬ô
+5
+java:S37517"Make this method "public".(Ç¸§æøÿÿÿÿ
+5
+java:S3751="Make this method "public".(Ğ½”·ûÿÿÿÿ
+5
+java:S3751B"Make this method "public".(¸íÎÉşÿÿÿÿ
+d
+java:S1192'"NDefine a constant instead of duplicating this literal "redirect:list" 4 times.(€‡ê¼
+w
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "list".(Å»°Ëıÿÿÿÿ

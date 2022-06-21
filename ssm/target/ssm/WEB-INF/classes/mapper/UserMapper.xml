@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.model.dao.UserMapper">
+    <resultMap id="BaseResultMap" type="com.bjpowernode.entity.User">
+        <id column="userId" jdbcType="INTEGER" property="userId" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="userPwd" jdbcType="VARCHAR" property="userPwd" />
+        <result column="userRealName" jdbcType="VARCHAR" property="userRealName" />
+        <result column="userSex" jdbcType="INTEGER" property="userSex" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        userId, userName, userPwd, userRealName, userSex, userAge
+    </sql>
+    <select id="selectAll" resultType="com.bjpowernode.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where userId = #{userId,jdbcType=INTEGER}
+    </select>
+    <select id="search" resultType="com.bjpowernode.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where 1=1
+        <if test="userName != null and userName != ''">
+            and userName like concat('%',#{userName},'%')
+        </if>
+        <if test="userRealName != null and userRealName != ''">
+            and userRealName like concat('%',#{userRealName},'%')
+        </if>
+        <if test="userSex != null">
+            and userSex = #{userSex}
+        </if>
+        <if test="userAgeBegin != null">
+            and userAge <![CDATA[>=]]> #{userAgeBegin}
+        </if>
+        <if test="userAgeEnd != null">
+            and userAge &lt;= #{userAgeEnd}
+        </if>
+    </select>
+    <select id="selectByUserName" resultType="com.bjpowernode.entity.User">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where userName = #{userName}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from t_user
+        where userId = #{userId,jdbcType=INTEGER}
+    </delete>
+    <delete id="delBatch">
+        delete from t_user
+        where userId in
+        <foreach collection="collection" item="userId" open="(" close=")" separator=",">
+            #{userId}
+        </foreach>
+    </delete>
+    <insert id="insert" parameterType="com.bjpowernode.entity.User">
+        insert into t_user (userId, userName, userPwd,
+                            userRealName, userSex, userAge)
+        values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR},
+                #{userRealName,jdbcType=VARCHAR}, #{userSex,jdbcType=INTEGER}, #{userAge,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.bjpowernode.entity.User">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                userId,
+            </if>
+            <if test="userName != null">
+                userName,
+            </if>
+            <if test="userPwd != null">
+                userPwd,
+            </if>
+            <if test="userRealName != null">
+                userRealName,
+            </if>
+            <if test="userSex != null">
+                userSex,
+            </if>
+            <if test="userAge != null">
+                userAge,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userPwd != null">
+                #{userPwd,jdbcType=VARCHAR},
+            </if>
+            <if test="userRealName != null">
+                #{userRealName,jdbcType=VARCHAR},
+            </if>
+            <if test="userSex != null">
+                #{userSex,jdbcType=INTEGER},
+            </if>
+            <if test="userAge != null">
+                #{userAge,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.entity.User">
+        update t_user
+        <set>
+            <if test="userName != null">
+                userName = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="userPwd != null">
+                userPwd = #{userPwd,jdbcType=VARCHAR},
+            </if>
+            <if test="userRealName != null">
+                userRealName = #{userRealName,jdbcType=VARCHAR},
+            </if>
+            <if test="userSex != null">
+                userSex = #{userSex,jdbcType=INTEGER},
+            </if>
+            <if test="userAge != null">
+                userAge = #{userAge,jdbcType=INTEGER},
+            </if>
+        </set>
+        where userId = #{userId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.bjpowernode.entity.User">
+        update t_user
+        set userName = #{userName,jdbcType=VARCHAR},
+            userPwd = #{userPwd,jdbcType=VARCHAR},
+            userRealName = #{userRealName,jdbcType=VARCHAR},
+            userSex = #{userSex,jdbcType=INTEGER},
+            userAge = #{userAge,jdbcType=INTEGER}
+        where userId = #{userId,jdbcType=INTEGER}
+    </update>
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.model.dao.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.bjpowernode.entity.Employee">
+    <id column="emplId" jdbcType="INTEGER" property="emplId" />
+    <result column="emplName" jdbcType="VARCHAR" property="emplName" />
+    <result column="emplAge" jdbcType="INTEGER" property="emplAge" />
+    <result column="emplSex" jdbcType="INTEGER" property="emplSex" />
+    <result column="emplPhone" jdbcType="VARCHAR" property="emplPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    emplId, emplName, emplAge, emplSex, emplPhone
+  </sql>
+    <select id="selectAll" resultType="com.bjpowernode.entity.Employee">
+        select
+        <include refid="Base_Column_List" />
+        from t_employee
+    </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_employee
+    where emplId = #{emplId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_employee
+    where emplId = #{emplId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bjpowernode.entity.Employee">
+    insert into t_employee (emplId, emplName, emplAge, 
+      emplSex, emplPhone)
+    values (#{emplId,jdbcType=INTEGER}, #{emplName,jdbcType=VARCHAR}, #{emplAge,jdbcType=INTEGER}, 
+      #{emplSex,jdbcType=INTEGER}, #{emplPhone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjpowernode.entity.Employee">
+    insert into t_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="emplId != null">
+        emplId,
+      </if>
+      <if test="emplName != null">
+        emplName,
+      </if>
+      <if test="emplAge != null">
+        emplAge,
+      </if>
+      <if test="emplSex != null">
+        emplSex,
+      </if>
+      <if test="emplPhone != null">
+        emplPhone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="emplId != null">
+        #{emplId,jdbcType=INTEGER},
+      </if>
+      <if test="emplName != null">
+        #{emplName,jdbcType=VARCHAR},
+      </if>
+      <if test="emplAge != null">
+        #{emplAge,jdbcType=INTEGER},
+      </if>
+      <if test="emplSex != null">
+        #{emplSex,jdbcType=INTEGER},
+      </if>
+      <if test="emplPhone != null">
+        #{emplPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.entity.Employee">
+    update t_employee
+    <set>
+      <if test="emplName != null">
+        emplName = #{emplName,jdbcType=VARCHAR},
+      </if>
+      <if test="emplAge != null">
+        emplAge = #{emplAge,jdbcType=INTEGER},
+      </if>
+      <if test="emplSex != null">
+        emplSex = #{emplSex,jdbcType=INTEGER},
+      </if>
+      <if test="emplPhone != null">
+        emplPhone = #{emplPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where emplId = #{emplId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjpowernode.entity.Employee">
+    update t_employee
+    set emplName = #{emplName,jdbcType=VARCHAR},
+      emplAge = #{emplAge,jdbcType=INTEGER},
+      emplSex = #{emplSex,jdbcType=INTEGER},
+      emplPhone = #{emplPhone,jdbcType=VARCHAR}
+    where emplId = #{emplId,jdbcType=INTEGER}
+  </update>
+</mapper>
