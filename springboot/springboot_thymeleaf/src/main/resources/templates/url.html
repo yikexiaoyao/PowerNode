@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>=====URL表达式：@{...}</h2>
+    <!--
+        绝对路径：协议，盘符，/
+    -->
+    <a href="http://www.baidu.com">baidu</a>
+    <a href="/springboot_thymeleaf/expression/user?sname=zsf">user</a>
+    <a href="C:\Users\DELL\IdeaProjects\springboot\springboot_thymeleaf\src\main\resources\templates">user</a>
+    <a th:href="@{/springboot_thymeleaf/expression/user}">user</a>
+    <a th:href="@{/expression/user?sname=lisi}">user</a>
+    <a th:href="@{/expression/user?sname=${user.nick}}">user</a>
+    <a th:href="@{'/expression/user?sname='+${user.nick}}">user</a>
+    <a th:href="@{/expression/user(sname=${user.nick},age=110)}">user</a>
+
+    <hr>
+    <!--
+     相对路径：相对当前资源所在目录 计算出来的 路径
+        http://localhost:9701/springboot_thymeleaf/expression/url
+        http://localhost:9701/springboot_thymeleaf/expression/user
+        http://localhost:9701/springboot_thymeleaf/index
+
+    -->
+    <a href="user">user</a>
+    <a href="../../springboot_thymeleaf/index">index</a>
+    <a th:href="@{user}">user</a>
+    <a th:href="@{user(sname=${user.getNick()},age=121,phone=${user.phone})}">user</a>
+
+</body>
+</html>

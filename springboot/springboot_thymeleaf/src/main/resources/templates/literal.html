@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--文本字面量-->
+    <a th:href="@{'/expression/user/' + ${user.id}}">修改用户</a>
+
+    <!--数字字面量-->
+    <p>今年是<span th:text="2017">1949</span>年</p>
+    <p>20年后, 将是<span th:text="2017 + 20">1969</span>年</p>
+
+    <!--boolean字面量-->
+    <p th:if="${sex == true}">执行操作</p>
+
+    <!--null字面量-->
+    <p th:if="${user == null}">user为空</p>
+    <p th:if="${user != null}">user不为空</p>
+
+    <!--一种是字面量使用加号拼接-->
+    <span th:text="'当前是第'+${cunPage}+'页 ,共'+${totalPage}+'页'"></span><br>
+    <span th:text="|当前是第${cunPage}页 ,共${totalPage}页|"></span>
+    <br>
+    <span th:text="${sex == '1'?'男':'女'}"></span>
+
+</body>
+</html>

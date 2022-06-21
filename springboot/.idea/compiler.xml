@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot_dubbo_provider" />
+        <module name="springboot_dubbo_consumer" />
+        <module name="springboot_jsp" />
+        <module name="springboot_springmvc" />
+        <module name="springboot_java" />
+        <module name="springboot_servlet_filter" />
+        <module name="springboot_dubbo_exterface" />
+        <module name="springboot_mybatis" />
+        <module name="springboot_test" />
+        <module name="springboot_redis" />
+        <module name="springboot_thymeleaf" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot_dubbo_consumer" target="11" />
+      <module name="springboot_dubbo_exterface" target="11" />
+      <module name="springboot_dubbo_provider" target="11" />
+      <module name="springboot_java" target="11" />
+      <module name="springboot_jsp" target="11" />
+      <module name="springboot_jsp001" target="11" />
+      <module name="springboot_mybatis" target="11" />
+      <module name="springboot_mybatis001" target="11" />
+      <module name="springboot_redis" target="11" />
+      <module name="springboot_servlet_filter" target="11" />
+      <module name="springboot_springmvc" target="11" />
+      <module name="springboot_test" target="11" />
+      <module name="springboot_test001" target="11" />
+      <module name="springboot_thymeleaf" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot_dubbo_consumer" options="-parameters" />
+      <module name="springboot_dubbo_exterface" options="-parameters" />
+      <module name="springboot_dubbo_provider" options="-parameters" />
+      <module name="springboot_java" options="-parameters" />
+      <module name="springboot_jsp" options="-parameters" />
+      <module name="springboot_jsp001" options="-parameters" />
+      <module name="springboot_mybatis" options="-parameters" />
+      <module name="springboot_mybatis001" options="-parameters" />
+      <module name="springboot_redis" options="-parameters" />
+      <module name="springboot_servlet_filter" options="-parameters" />
+      <module name="springboot_springmvc" options="-parameters" />
+      <module name="springboot_test" options="-parameters" />
+      <module name="springboot_test001" options="-parameters" />
+      <module name="springboot_thymeleaf" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf标准变量表达式</title>
+</head>
+<body>
+    <h2>Thymeleaf以HTML为载体展示数据</h2>
+    <h2>展示用户信息：</h2>
+    <span th:text="${user.id}"></span><br/>
+    <span th:text="${user.nick}"></span><br/>
+    <span th:text="${user.phone}"></span><br/>
+    <span th:text="${user.address}"></span><br/>
+
+    <h2>选择变量表达：又叫做*号表达式</h2>
+    <h3 style="color: red">1.用户对象仅在div范围内有效</h3>
+    <div th:object="${user}">
+        <span th:text="*{id}"></span><br/>
+        <span th:text="*{nick}"></span><br/>
+        <span th:text="*{phone}"></span><br/>
+        <span th:text="*{address}"></span><br/>
+    </div>
+
+    <h3 style="color: red">2.选择变量表达式其它用法展示数据</h3>
+    <div>
+        <span th:text="*{user.id}"></span><br/>
+        <span th:text="*{user.phone}"></span><br/>
+        <span th:text="*{user.nick}"></span><br/>
+        <span th:text="*{user.address}"></span><br/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div th:text="${#request.getAttribute('user')}"></div>
+    <div th:text="${#request.getAttribute('sex')}"></div>
+    <div th:text="${#request.getContextPath()}"></div>
+    <div th:text="${#request.getLocalAddr()}"></div>
+    <div th:text="${#request.getRequestURI()}"></div>
+    <div th:text="${#request.getRequestURL()}"></div>
+    <div th:text="${#request.getProtocol()}"></div>
+
+    <hr>
+    <div th:text="${#session.getAttribute('birthday')}"></div>
+    <hr>
+    <div th:text="${#dates.format(#session.getAttribute('birthday'),'yyyy-MM-dd HH:mm:ss')}"></div>
+    <div th:text="${#strings.substring(#request.getAttribute('user').getPhone(),1)}"></div>
+    <div th:text="${#numbers.formatDecimal(#request.getAttribute('salary'),2,2)}"></div>
+
+</body>
+</html>

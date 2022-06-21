@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    标准变量表达式用户数据的展示：<br>
+    <span th:text="${user.id}"></span>
+    <span th:text="${user.nick}"></span>
+    <span th:text="${user.phone}"></span>
+    <span th:text="${user.address}"></span>
+    <hr>
+    <div th:inline="text">
+        [[${user.id}]]
+        [[${user.nick}]]
+        [[${user.phone}]]
+        [[${user.address}]]
+
+        <span th:text="${user.phone}"></span>
+        <span th:text="${user.address}"></span>
+
+    </div>
+    <button type ="button" onclick="func()">抽奖</button>
+
+    </body>
+    <script th:inline="javascript">
+        function func() {
+            alert("恭喜"+[[${user.nick}]]+"手机号："+[[${user.phone}]]+"中奖");
+        }
+
+    </script>
+
+</html>

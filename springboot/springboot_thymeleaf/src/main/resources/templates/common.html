@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+</head>
+<body>
+    <h1>th:action的使用</h1>
+
+    <div>当你需要动态获取变量数据的时候，就需要加th前缀</div>
+    <form id="login" th:action="@{'/login/' + ${user.id}}"></form>
+
+    <div>以下两种方式获取不到用户的id</div>
+    <form id="login2" action="/login/${user.id}"></form>
+    <form id="login3" action="/login"+${user.id}></form>
+
+    <input type="text" id="userId" name="userId" th:value="${user.getId()}">
+    <input type="text" id="userId2" name="userId" th:attr="value=${user.getId()}">
+
+    <!--thymeleaf没有对应的th标签，所以${user.id}不能被识别-->
+    <span zhangsan=${user.id}></span>
+    <!--通过th:attr对自定义的属性赋值-->
+    <span id="zs" th:attr="zhangsan=${user.id}"></span>
+    <abc>asdf</abc>
+
+    <a th:onclick="'fun('+${user.id}+')'" th:style="'color:red'">点击我</a>
+
+    <!--目前thymeleaf版本要求只能传递数字和布尔类型-->
+    <a th:onclick="'fun('+${user.id}+')'">点击我</a>
+
+    <script type="text/javascript">
+        function fun(userId){
+            alert(userId);
+        }
+    </script>
+
+    </body>
+    <script>
+        $(function () {
+            alert("====="+$("#zs").attr("zhangsan"));
+        });
+
+    </script>
+
+</html>

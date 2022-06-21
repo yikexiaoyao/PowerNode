@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot_dubbo_consumer/springboot_dubbo_consumer.iml" filepath="$PROJECT_DIR$/springboot_dubbo_consumer/springboot_dubbo_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_dubbo_exterface/springboot_dubbo_exterface.iml" filepath="$PROJECT_DIR$/springboot_dubbo_exterface/springboot_dubbo_exterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_dubbo_provider/springboot_dubbo_provider.iml" filepath="$PROJECT_DIR$/springboot_dubbo_provider/springboot_dubbo_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_java/springboot_java.iml" filepath="$PROJECT_DIR$/springboot_java/springboot_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_jsp/springboot_jsp.iml" filepath="$PROJECT_DIR$/springboot_jsp/springboot_jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_mybatis/springboot_mybatis.iml" filepath="$PROJECT_DIR$/springboot_mybatis/springboot_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_redis/springboot_redis.iml" filepath="$PROJECT_DIR$/springboot_redis/springboot_redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_servlet_filter/springboot_servlet_filter.iml" filepath="$PROJECT_DIR$/springboot_servlet_filter/springboot_servlet_filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_springmvc/springboot_springmvc.iml" filepath="$PROJECT_DIR$/springboot_springmvc/springboot_springmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_test/springboot_test.iml" filepath="$PROJECT_DIR$/springboot_test/springboot_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_thymeleaf/springboot_thymeleaf.iml" filepath="$PROJECT_DIR$/springboot_thymeleaf/springboot_thymeleaf.iml" />
+    </modules>
+  </component>
+</project>

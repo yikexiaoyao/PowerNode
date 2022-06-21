@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot集成Thymeleaf</title>
+</head>
+<body >
+    <h2>-------list---------</h2>
+    <div th:each="user:${userList}">
+        <span th:text="${userStat.first}"></span>-
+        <span th:text="${userStat.last}"></span>-
+        <span th:text="${userStat.even}"></span>-
+        <span th:text="${userStat.odd}"></span>-
+        <span th:text="${userStat.index}"></span>-
+        <span th:text="${userStat.count}"></span>-
+        <span th:text="${userStat.current}"></span>-
+        <span th:text="${user.id}"></span>
+        <span th:text="${user.nick}"></span>
+        <span th:text="${user.phone}"></span>
+        <span th:text="${user.address}"></span>
+
+    </div>
+
+    <h2>-------set---------</h2>
+    <div th:each="user,userSt:${userSet}">
+        <span th:text="${userSt.first}"></span>-
+        <span th:text="${userSt.last}"></span>-
+        <span th:text="${userSt.even}"></span>-
+        <span th:text="${userSt.odd}"></span>-
+        <span th:text="${userSt.index}"></span>-
+        <span th:text="${userSt.count}"></span>-
+        <span th:text="${userSt.current}"></span>-
+        <span th:text="${user.id}"></span>
+        <span th:text="${user.nick}"></span>
+        <span th:text="${user.phone}"></span>
+        <span th:text="${user.address}"></span>
+
+    </div>
+
+    <h2>-------map---------</h2>
+    <div th:each="map:${userMap}">
+        <span th:text="${mapStat.count}"></span>
+        <span th:text="${map.key}"></span>
+        <span th:text="${map.value}"></span>
+        <span th:text="${map.value.id}"></span>
+        <span th:text="${map.value.nick}"></span>
+        <span th:text="${map.value.phone}"></span>
+
+    </div>
+
+</body>
+</html>

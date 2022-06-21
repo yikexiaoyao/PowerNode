@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/springboot_dubbo_consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_dubbo_exterface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_dubbo_provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_dubbo_provider/src/main/java/com/bjpowernode/springboot_dubbo_consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_java/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_jsp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_mybaties/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_servlet_filter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_springmvc/springboot_redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_springmvc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_thymeleaf/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
