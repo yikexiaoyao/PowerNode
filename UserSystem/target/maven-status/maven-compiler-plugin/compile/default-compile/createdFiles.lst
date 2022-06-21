@@ -1,0 +1,10 @@
+model\service\UserService.class
+util\LoginInterceptor.class
+controller\UserController.class
+controller\RegisterController.class
+controller\AjaxController.class
+entity\User.class
+model\service\IUserService.class
+controller\LoginController.class
+model\dao\UserMapper.class
+controller\IndexController.class
