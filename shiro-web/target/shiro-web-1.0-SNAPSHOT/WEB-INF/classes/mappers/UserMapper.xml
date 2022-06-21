@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.mapper.UserMapper">
+
+    <!--根据身份查询用户是否存在-->
+    <select id="verifyPrincipal" resultType="user">
+        select *
+        from t_user
+        where username = #{username}
+    </select>
+
+    <!--查询登录用户的菜单权限-->
+    <select id="queryMenus" resultType="permission">
+        select *
+        from t_permission
+        where pid in
+              (
+                  select pId
+                  from t_role_permission rp
+                  where roleId in
+                        (
+                            select roleId
+                            from t_user_role ur
+                            where uid in
+                                  (
+                                      select uid
+                                      from t_user
+                                      where username = #{username}
+                                  )
+                        )
+              )
+          and url is not null
+    </select>
+
+    <!--查询用户的权限-->
+    <select id="queryPermissions" resultType="permission">
+        select *
+        from t_permission
+        where pid in
+              (
+                  select pId
+                  from t_role_permission rp
+                  where roleId in
+                        (
+                            select roleId
+                            from t_user_role ur
+                            where uid in
+                                  (
+                                      select uid
+                                      from t_user
+                                      where username = #{username}
+                                  )
+                        )
+              )
+          and parent_id is not null
+          and code is not null
+    </select>
+</mapper>

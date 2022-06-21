@@ -1,0 +1,13 @@
+com\bjpowernode\bean\User.class
+com\bjpowernode\mapper\UserMapper.class
+com\bjpowernode\realm\ShiroRealm.class
+com\bjpowernode\controller\RoleController.class
+com\bjpowernode\bean\TreeNode.class
+com\bjpowernode\mapper\RoleMapper.class
+com\bjpowernode\service\impl\UserServiceImpl.class
+com\bjpowernode\service\RoleService.class
+com\bjpowernode\service\UserService.class
+com\bjpowernode\controller\UserController.class
+com\bjpowernode\bean\Permission.class
+com\bjpowernode\controller\ViewController.class
+com\bjpowernode\service\impl\RoleServiceImpl.class

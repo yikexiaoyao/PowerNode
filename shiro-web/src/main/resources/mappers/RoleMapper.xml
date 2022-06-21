@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.mapper.RoleMapper">
+
+    <!--查询所有权限树-->
+    <select id="queryAllPermissions" resultType="permission">
+        select *
+        from t_permission
+    </select>
+
+    <!--查询角色拥有的权限-->
+    <select id="queryPermissionByRole" resultType="permission">
+        select *
+        from t_permission
+        where pid in
+              (
+                  select pId
+                  from t_role_permission rp
+                  where roleId = #{id}
+              )
+    </select>
+
+    <select id="selectAllRoles" resultType="com.bjpowernode.bean.Role">
+        select *
+        from t_role
+    </select>
+
+    <!--删除角色对应的所有权限-->
+    <delete id="delelteAllPermission">
+        delete
+        from t_role_permission
+        where roleId = #{id}
+    </delete>
+    <delete id="deleteByExample">
+        delete
+        from t_role
+        where roleId = #{roleId}
+    </delete>
+
+    <!--给角色插入新的权限-->
+    <insert id="insertPermission">
+        insert into t_role_permission(roleId, pId)
+        values (#{roleId}, #{pId})
+    </insert>
+
+    <insert id="insertRole">
+        insert into t_role
+        values (#{roleId}, #{roleName})
+    </insert>
+</mapper>
