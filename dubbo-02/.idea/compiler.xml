@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="user-provider" />
+        <module name="common-util" />
+        <module name="provider" />
+        <module name="consumer" />
+        <module name="bean" />
+        <module name="inter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="abc" target="11" />
+      <module name="bean" target="11" />
+      <module name="common-util" target="11" />
+      <module name="consumer" target="11" />
+      <module name="inter" target="11" />
+      <module name="parent" target="11" />
+      <module name="provider" target="11" />
+      <module name="user-provider" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
